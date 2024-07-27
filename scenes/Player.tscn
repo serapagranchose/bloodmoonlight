@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://brqyv5xicdwi5"]
+[gd_scene load_steps=38 format=3 uid="uid://brqyv5xicdwi5"]
 
 [ext_resource type="Script" path="res://scenes/CharacterBody2D.gd" id="1_3kh65"]
 [ext_resource type="Texture2D" uid="uid://bc4unaeyd5vy" path="res://assets/Player.png" id="2_hcsy5"]
@@ -274,6 +274,9 @@ animations = [{
 radius = 3.02084
 height = 9.99768
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqudr"]
+radius = 6.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3kh65")
 
@@ -295,3 +298,11 @@ zoom = Vector2(4, 4)
 position = Vector2(1, 5)
 rotation = 0.00474738
 scale = Vector2(1e-05, 1e-05)
+
+[node name="ActionableFinder" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_vqudr")

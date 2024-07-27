@@ -1,5 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://m0eoq15grajl"]
+[gd_scene load_steps=11 format=3 uid="uid://m0eoq15grajl"]
 
+[ext_resource type="Script" path="res://scripts/Merchant.gd" id="1_aewag"]
+[ext_resource type="PackedScene" uid="uid://7ijff50v8l3t" path="res://scenes/InteractionArea.tscn" id="2_28yrx"]
 [ext_resource type="Texture2D" uid="uid://rvolcpm322wd" path="res://assets/Merchant.png" id="2_t32hr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o373t"]
@@ -42,7 +44,12 @@ animations = [{
 radius = 2.9999
 height = 9.99965
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7j3tp"]
+radius = 13.0
+
 [node name="Merchant" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_aewag")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rvv8w")
@@ -52,3 +59,11 @@ autoplay = "default"
 position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mkrys")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_28yrx")]
+unique_name_in_owner = true
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_7j3tp")

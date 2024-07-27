@@ -10,10 +10,8 @@ enum PlayerDirection {
 	up
 }
 
-
 var _direction: PlayerDirection = PlayerDirection.down
 @onready var _animated_sprite = $AnimatedSprite2D
-
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("left_click"):
@@ -23,7 +21,6 @@ func _physics_process(delta):
 	velocity = input_direction * SPEED
 	set_player_animation()
 	move_and_slide()
-	
 
 func launch_attack():
 	const attack = preload("res://scenes/BasicAttack.tscn")
