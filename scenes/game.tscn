@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4fb748fp1rvl"]
+[gd_scene load_steps=5 format=3 uid="uid://b4fb748fp1rvl"]
 
-[ext_resource type="Texture2D" uid="uid://hjb4ug25rwm1" path="res://assets/8BIT CanariPack TopDown/TILESET/PixelPackTOPDOWN8BIT.png" id="1_04fc3"]
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_mf3ht"]
+[ext_resource type="Texture2D" uid="uid://hvrvyxndhrtu" path="res://assets/8BIT CanariPack TopDown/TILESET/PixelPackTOPDOWN8BIT.png" id="1_04fc3"]
+[ext_resource type="PackedScene" uid="uid://brqyv5xicdwi5" path="res://scenes/Player.tscn" id="1_b6tpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mj7ve"]
 texture = ExtResource("1_04fc3")
@@ -418,6 +418,9 @@ point_count = 49
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_mf3ht")
+
+[node name="Player" parent="." instance=ExtResource("1_b6tpa")]
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(12, 208)
