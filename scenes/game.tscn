@@ -415,9 +415,6 @@ sources/0 = SubResource("TileSetAtlasSource_mj7ve")
 [node name="Player" parent="." instance=ExtResource("1_b6tpa")]
 z_index = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qntym")
 format = 2
