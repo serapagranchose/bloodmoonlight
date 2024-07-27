@@ -16,16 +16,13 @@ var _directions: Array = []
 @onready var _animated_sprite = $AnimatedSprite2D
 
 
-<<<<<<< HEAD
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("left_click"):
-			launch_attack()
-	var input_direction = Input.get_vector("q", "d", "z", "s")
+		launch_attack()
+		
+	var input_direction = Input.get_vector("movement_left", "movement_right", "movement_up", "movement_down")
 
-=======
-	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
->>>>>>> origin/main
 	velocity = input_direction * SPEED
 	set_player_animation()
 	move_and_slide()
