@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://m0eoq15grajl"]
+
+[ext_resource type="Texture2D" uid="uid://rvolcpm322wd" path="res://assets/Merchant.png" id="2_t32hr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o373t"]
+atlas = ExtResource("2_t32hr")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccu21"]
+atlas = ExtResource("2_t32hr")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpwhp"]
+atlas = ExtResource("2_t32hr")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gywha"]
+atlas = ExtResource("2_t32hr")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvv8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o373t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccu21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpwhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gywha")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mkrys"]
+radius = 2.9999
+height = 9.99965
+
+[node name="Merchant" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rvv8w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mkrys")

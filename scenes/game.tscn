@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4fb748fp1rvl"]
+[gd_scene load_steps=11 format=3 uid="uid://b4fb748fp1rvl"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_1vn4m"]
 [ext_resource type="Texture2D" uid="uid://hvrvyxndhrtu" path="res://assets/8BIT CanariPack TopDown/TILESET/PixelPackTOPDOWN8BIT.png" id="1_04fc3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/daynightcycle.gd" id="4_01hfo"]
 [ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://scenes/DayNightCycleUI.tscn" id="5_0iqwt"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://assets/daynightcycle-gradient-texture.tres" id="5_iqgwg"]
+[ext_resource type="PackedScene" uid="uid://m0eoq15grajl" path="res://scenes/Merchant.tscn" id="7_vuvlg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mj7ve"]
 texture = ExtResource("1_04fc3")
@@ -423,9 +424,6 @@ point_count = 71
 [node name="game" type="Node2D"]
 script = ExtResource("1_1vn4m")
 
-[node name="Player" parent="." instance=ExtResource("1_b6tpa")]
-z_index = 1
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qntym")
 format = 2
@@ -443,12 +441,18 @@ rotation = -0.128009
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="DayNightCycleUI" parent="CanvasLayer" instance=ExtResource("5_0iqwt")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.275204, 0.281099, 0.29735, 1)
 script = ExtResource("4_01hfo")
 gradient_texture = ExtResource("5_iqgwg")
+
+[node name="Merchant" parent="." instance=ExtResource("7_vuvlg")]
+position = Vector2(-120, -59)
+
+[node name="Player" parent="." instance=ExtResource("1_b6tpa")]
+z_index = 1
 
 [connection signal="timeout" from="Ennemy Spawn Timer" to="." method="_on_ennemy_spawn_timer_timeout"]
