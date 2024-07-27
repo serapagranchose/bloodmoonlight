@@ -7,7 +7,7 @@ var IS_NIGHT = false
 
 signal time_tick(day:int, hour:int, minute:int)
 
-
+@onready var game = get_node("/root/game")
 @export var gradient_texture:GradientTexture1D
 @export var INGAME_SPEED = 20.0
 @export var INITIAL_HOUR = 7:
@@ -36,9 +36,9 @@ func _recalculate_time() -> void:
 	var minute = int(current_day_minutes % MINUTES_PER_HOUR)
 
 	if (hour >= 20 || hour <= 5):
-		IS_NIGHT = true
+		game.night(hour, minute)
 	else:
-		IS_NIGHT = false
+		game.day(hour, minute)
 
 	if past_minute != minute:
 		past_minute = minute

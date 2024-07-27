@@ -4,7 +4,7 @@ extends Node2D
 @onready var canvas_modulate = $CanvasModulate
 @onready var ui = $CanvasLayer/DayNightCycleUI
 
-var round = 0
+var is_night = false
 var ennemy_nb = 0
 var ennemy_max = 10
 
@@ -13,11 +13,17 @@ func spawn_mob():
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
+	new_mob.add_to_group("ennemies")
+	ennemy_nb += 1
+	print(new_mob, " spawned!")
 
-func _on_ennemy_spawn_timer_timeout():
-	if (canvas_modulate.IS_NIGHT && ennemy_nb < ennemy_max):
+func night(hour, minute):
+	if (!is_night): is_night = true
+	if (ennemy_nb < ennemy_max):
 		spawn_mob()
-		ennemy_nb += 1
+
+func day(hour, minute):
+	if (is_night): is_night = false
 
 func _ready() -> void:
 	canvas_layer.visible = true
