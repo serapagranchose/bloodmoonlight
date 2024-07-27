@@ -99,6 +99,6 @@ autoplay = "default"
 frame_progress = 0.227717
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-rotation = 1.57912
+position = Vector2(0, 3)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mkrys")
