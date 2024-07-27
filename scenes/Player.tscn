@@ -274,21 +274,19 @@ animations = [{
 radius = 3.02084
 height = 9.99768
 
-[node name="Player" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3kh65")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5jqmk")
 animation = &"idle_down"
 frame_progress = 0.948744
 speed_scale = -1.49
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_syfsf")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

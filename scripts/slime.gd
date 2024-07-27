@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-@onready var player  = get_node("/root/game/Player")
+const SPEED = 100.0
+
+@onready var player = get_node("/root/game/Player")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
-	velocity = direction * 300.0
-	move_and_slide() 
+	print("Onch", player.global_position)
+	velocity = direction * SPEED
+	move_and_slide()
