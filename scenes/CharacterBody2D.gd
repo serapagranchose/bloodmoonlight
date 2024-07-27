@@ -10,14 +10,9 @@ enum PlayerDirection {
 	up
 }
 
-<<<<<<< HEAD
-=======
-var leftPressed = false
->>>>>>> origin/main
+
 var _direction: PlayerDirection = PlayerDirection.down
 @onready var _animated_sprite = $AnimatedSprite2D
-
-<<<<<<< HEAD
 
 
 func _physics_process(delta):
@@ -25,11 +20,6 @@ func _physics_process(delta):
 		launch_attack()
 		
 	var input_direction = Input.get_vector("movement_left", "movement_right", "movement_up", "movement_down")
-
-=======
-func _physics_process(delta):
-	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
->>>>>>> origin/main
 	velocity = input_direction * SPEED
 	set_player_animation()
 	move_and_slide()
