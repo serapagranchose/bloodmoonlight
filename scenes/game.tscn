@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4fb748fp1rvl"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_1vn4m"]
-[ext_resource type="Texture2D" uid="uid://hjb4ug25rwm1" path="res://assets/8BIT CanariPack TopDown/TILESET/PixelPackTOPDOWN8BIT.png" id="1_04fc3"]
+[ext_resource type="Texture2D" uid="uid://hvrvyxndhrtu" path="res://assets/8BIT CanariPack TopDown/TILESET/PixelPackTOPDOWN8BIT.png" id="1_04fc3"]
 [ext_resource type="PackedScene" uid="uid://brqyv5xicdwi5" path="res://scenes/Player.tscn" id="1_b6tpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mj7ve"]
