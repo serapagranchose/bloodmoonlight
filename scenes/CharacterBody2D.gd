@@ -20,7 +20,6 @@ var _directions: Array = []
 func _physics_process(delta):
 
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	print(input_direction)
 	velocity = input_direction * SPEED
 	set_player_animation()
 	move_and_slide()

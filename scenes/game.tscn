@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4fb748fp1rvl"]
+[gd_scene load_steps=10 format=3 uid="uid://b4fb748fp1rvl"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_1vn4m"]
 [ext_resource type="Texture2D" uid="uid://hjb4ug25rwm1" path="res://assets/8BIT CanariPack TopDown/TILESET/PixelPackTOPDOWN8BIT.png" id="1_04fc3"]
 [ext_resource type="PackedScene" uid="uid://brqyv5xicdwi5" path="res://scenes/Player.tscn" id="1_b6tpa"]
+[ext_resource type="Script" path="res://scripts/daynightcycle.gd" id="4_01hfo"]
+[ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://scenes/DayNightCycleUI.tscn" id="5_0iqwt"]
+[ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://assets/daynightcycle-gradient-texture.tres" id="5_iqgwg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mj7ve"]
 texture = ExtResource("1_04fc3")
@@ -436,7 +439,16 @@ unique_name_in_owner = true
 position = Vector2(-716, -385)
 rotation = -0.128009
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Ennemy Spawn Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DayNightCycleUI" parent="CanvasLayer" instance=ExtResource("5_0iqwt")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.275204, 0.281099, 0.29735, 1)
+script = ExtResource("4_01hfo")
+gradient_texture = ExtResource("5_iqgwg")
+
+[connection signal="timeout" from="Ennemy Spawn Timer" to="." method="_on_ennemy_spawn_timer_timeout"]
