@@ -15,7 +15,7 @@ func spawn_mob():
 	add_child(new_mob)
 
 func _on_ennemy_spawn_timer_timeout():
-	if (ennemy_nb < ennemy_max):
+	if (canvas_modulate.IS_NIGHT && ennemy_nb < ennemy_max):
 		spawn_mob()
 		ennemy_nb += 1
 
