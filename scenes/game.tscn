@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://brqyv5xicdwi5" path="res://scenes/Player.tscn" id="1_b6tpa"]
 [ext_resource type="Script" path="res://scripts/daynightcycle.gd" id="4_01hfo"]
 [ext_resource type="PackedScene" uid="uid://b4mitotcubsj0" path="res://scenes/DayNightCycleUI.tscn" id="5_0iqwt"]
-[ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://assets/daynightcycle-gradient-texture.tres" id="5_iqgwg"]
+[ext_resource type="Texture2D" uid="uid://bl5smn70jbylo" path="res://assets/daynightcycle-gradient-texture.tres" id="5_iqgwg"]
 [ext_resource type="PackedScene" uid="uid://m0eoq15grajl" path="res://scenes/Merchant.tscn" id="7_vuvlg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mj7ve"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c3ascoftc1kn2"]
 
 [ext_resource type="Script" path="res://scenes/BasicAttack.gd" id="1_2hwct"]
-[ext_resource type="Texture2D" path="res://assets/Basic attack.png" id="2_brgtl"]
+[ext_resource type="Texture2D" uid="uid://dtsbqaftwxlp1" path="res://assets/Basic attack.png" id="2_brgtl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b55nr"]
 atlas = ExtResource("2_brgtl")
@@ -46,7 +46,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eqp6v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1asw"]
+size = Vector2(12, 18)
 
 [node name="BasicAttack" type="Area2D"]
 scale = Vector2(1, 1.01316)
@@ -56,11 +57,15 @@ script = ExtResource("1_2hwct")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 240
+position = Vector2(6, 0)
 sprite_frames = SubResource("SpriteFrames_lroy0")
 autoplay = "default"
 frame = 4
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -3.38813e-21)
 scale = Vector2(1.23141, 0.629928)
-shape = SubResource("CircleShape2D_eqp6v")
+shape = SubResource("RectangleShape2D_j1asw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
