@@ -3,7 +3,7 @@ extends Node2D
 @onready var player = get_node("/root/game/Player")
 @onready var label = $Label
 
-const base_text = "[E] to "
+const base_text = "[E] TO "
 
 var active_areas = []
 var can_interact = true
@@ -21,8 +21,8 @@ func _process(delta):
 		active_areas.sort_custom(_sort_by_distrance_to_player)
 		label.text = base_text + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
-		label.global_position.y -= 36
-		label.global_position.x -= label.size.x / 2
+		label.global_position.y -= 16
+		label.global_position.x -= label.size.x / 4
 		label.show()
 	else:
 		label.hide()
