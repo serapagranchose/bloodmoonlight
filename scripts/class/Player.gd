@@ -12,7 +12,11 @@ var attackRange: Stat
 var can_attack = true
 
 func _ready():
-	super._ready()
+	health.update_base(20)
+	current_health = 20
+	defense.update_base(5)
+	attack.update_base(5)
+	movementSpeed.update_base(100)
 	gold = Stat.new(0)
 	attackScale = Stat.new(Vector2(1,1), 1)
 	attackCooldown = Stat.new(1.5, 0)
@@ -21,7 +25,7 @@ func launch_attack():
 	if !can_attack:
 		return
 	var mouse_position = get_global_mouse_position()
-	var r = 12
+	var r = 8
 	var h =  $Center.global_position[0]
 	var k =  $Center.global_position[1]
 	var x1 = mouse_position[0]
@@ -32,7 +36,7 @@ func launch_attack():
 
 	var attack_direction = (mouse_position - $Center.global_position)
 	var new_attack = attack_scene.instantiate()
-	new_attack.scale = attackScale.value	
+	new_attack.scale = attackScale.value
 	new_attack.position = to_local(attack_position)
 	new_attack.rotation = (attack_direction.angle())
 	can_attack = false

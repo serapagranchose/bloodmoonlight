@@ -2,7 +2,11 @@ extends "res://scripts/class/Entity.gd"
 
 class_name Monster
 
-## je suis pas sur de comment l'implem
 
-func _init():
-	pass
+func _ready():
+	health.update_base(100)
+	current_health = 100
+	defense.update_base(5)
+	attack.update_base(5)
+	movementSpeed.update_base(100)
+	print("Monster health:", health.value)

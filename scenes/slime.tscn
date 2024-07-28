@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8acdabtf2jrj"]
+[gd_scene load_steps=17 format=3 uid="uid://c8acdabtf2jrj"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_wsdaj"]
 [ext_resource type="Texture2D" uid="uid://c0cjad5xet6wf" path="res://assets/8BIT CanariPack TopDown/SPRITES/ENEMIES/spritesheets/ENEMIES8bit_Blob Death.png" id="2_qc1nm"]
 [ext_resource type="Texture2D" uid="uid://cigwmjb3b28gc" path="res://assets/8BIT CanariPack TopDown/SPRITES/ENEMIES/spritesheets/ENEMIES8bit_Blob Walk.png" id="3_xbe67"]
 [ext_resource type="Texture2D" uid="uid://bm2apo3ronf81" path="res://assets/8BIT CanariPack TopDown/SPRITES/ENEMIES/spritesheets/ENEMIES8bit_Blob Hurt.png" id="4_2jk74"]
+[ext_resource type="PackedScene" uid="uid://dh73w3l6l2xkf" path="res://scenes/HealthBar.tscn" id="5_5xcix"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fumym"]
 atlas = ExtResource("2_qc1nm")
@@ -106,5 +107,12 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mkrys")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="HealthBar" parent="." instance=ExtResource("5_5xcix")]
+offset_left = -10.0
+offset_top = -11.0
+offset_right = -10.0
+offset_bottom = -11.0
+scale = Vector2(0.0726526, 0.0894614)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

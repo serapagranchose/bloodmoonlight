@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1xskgwhlw638"]
+
+[ext_resource type="Theme" uid="uid://3ghr3cm26rxo" path="res://healthBar.tres" id="1_jgvwq"]
+
+[node name="Control" type="ProgressBar"]
+z_as_relative = false
+texture_repeat = 1
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(1.16042, 0.421017)
+theme = ExtResource("1_jgvwq")
+value = 63.0
+allow_lesser = true
+show_percentage = false
