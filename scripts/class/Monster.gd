@@ -5,3 +5,4 @@ class_name Monster
 ## je suis pas sur de comment l'implem
 
 func _init():
+	pass

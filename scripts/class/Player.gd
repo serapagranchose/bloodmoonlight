@@ -11,8 +11,8 @@ var attackRange: Stat
 
 var can_attack = true
 
-func _init(param):
-	super(_init)
+func _ready():
+	super._ready()
 	gold = Stat.new(0)
 	attackScale = Stat.new(Vector2(1,1), 1)
 	attackCooldown = Stat.new(1.5, 0)
@@ -37,6 +37,6 @@ func launch_attack():
 	new_attack.rotation = (attack_direction.angle())
 	can_attack = false
 	new_attack.damage = attack.value
+	get_tree().create_timer(attackCooldown.value).timeout.connect(func(): can_attack = true)	
 	add_child(new_attack)
-	get_tree().create_timer(attackCooldown.value).timeout.connect(func(): can_attack = true)
 	

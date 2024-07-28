@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends "res://scripts/class/Monster.gd"
 
 const SPEED = 100.0
 

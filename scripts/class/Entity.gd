@@ -8,21 +8,13 @@ var defense: Stat
 var attack: Stat
 var movementSpeed: Stat
 
-func _init(
-	health = 20,
-	defense = 5,
-	attack = 5,
-	movementSpeed = 100,
-	healthModifier = 1.0,
-	defenseModifier = 1.0,
-	attackModifier = 1.0,
-	movementSpeedModifier = 1.0,
-	):
-	health = Stat.new(20)
+func _ready():
+	health = Stat.new(0)
 	current_health = health.value
-	defense = Stat.new(5)
-	attack = Stat.new(5)
-	movementSpeed = Stat.new(100)
+	defense = Stat.new(0)
+	attack = Stat.new(0)
+	movementSpeed = Stat.new(0)
+
 	
 func take_damage(damage: int):
 	current_health -= damage * damage_reduction_multiplier()
@@ -40,7 +32,6 @@ class Stat:
 	
 	func _init(base: Variant, modifier: float = 1.0):
 		_base = base
-		print(_base)
 		_modifier = modifier
 	
 	func get_base() -> Variant: return _base
@@ -50,11 +41,6 @@ class Stat:
 	func update_modifier(modifier: float) -> void: _modifier * modifier
 	
 	func _get(value_name: StringName) -> Variant:
-		
-		print("AAAAA", value_name)
-		print("AAAAA", value_name == "value")
-		print("AAAAA", _base)
-		print("AAAAA", _modifier)
 		if value_name == "value":
 			return _base * _modifier
 		return null
