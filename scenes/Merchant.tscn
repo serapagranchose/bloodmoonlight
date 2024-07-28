@@ -62,7 +62,7 @@ shape = SubResource("CapsuleShape2D_mkrys")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_28yrx")]
 unique_name_in_owner = true
-action_name = "talk"
+action_name = "TALK"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 12)
