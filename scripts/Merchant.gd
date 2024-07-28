@@ -4,7 +4,8 @@ extends CharacterBody2D
 
 const lines = [
 	"HELLOOO!",
-	"HOW YOU DOING?"
+	"HOW YOU DOING?",
+	"WHICH UPGRADE DO YOU WANT TO BUY?\n    [1] +ATTACK\n    [2] +SPEED\n    [3] +HEALTH\n    [E] NONE"
 ]
 
 func _ready():

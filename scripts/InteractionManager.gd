@@ -33,6 +33,12 @@ func _sort_by_distrance_to_player(area1, area2):
 	return area1_to_player < area2_to_player
 
 func _input(event):
+	if event.is_action_pressed("buy_health") && !can_interact:
+		print("buy health")
+	if event.is_action_pressed("buy_speed") && !can_interact:
+		print("buy speed")
+	if event.is_action_pressed("buy_attack") && !can_interact:
+		print("buy attack")
 	if event.is_action_pressed("interact") && can_interact:
 		if active_areas.size() > 0:
 			can_interact = false
