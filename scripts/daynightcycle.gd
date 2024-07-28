@@ -40,3 +40,6 @@ func _recalculate_time() -> void:
 	if past_minute != minute:
 		past_minute = minute
 		time_tick.emit(day, hour, minute)
+		
+func get_cycle_number() -> int:
+	return int(int(time / INGAME_TO_REAL_MINUTE_DURATION) / MINUTES_PER_DAY)

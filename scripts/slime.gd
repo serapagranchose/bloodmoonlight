@@ -6,6 +6,7 @@ const SPEED = 100.0
 @onready var game = get_node("/root/game")
 @onready var _health_bar = $HealthBar.get_node("ProgressBar")
 
+
 func _physics_process(delta):
 	if (_health_bar.value != current_health):
 		_health_bar.value = current_health
