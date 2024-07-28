@@ -4,6 +4,7 @@ class_name Player
 
 const attack_scene = preload("res://scenes/BasicAttack.tscn")
 
+var player = true
 var gold: Stat
 var attackScale: Stat
 var attackCooldown: Stat

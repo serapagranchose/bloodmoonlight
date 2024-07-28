@@ -11,9 +11,7 @@ var movementSpeed: Stat  = Stat.new(0)
 
 
 func take_damage(damage: int):
-	print("Entity health: ", current_health)
 	set_current_health(current_health - damage * damage_reduction_multiplier())
-	print("Entity new health: ", current_health)
 	
 	if (current_health <= 0):
 		queue_free()
