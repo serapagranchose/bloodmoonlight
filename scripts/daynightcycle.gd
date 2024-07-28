@@ -35,10 +35,7 @@ func _recalculate_time() -> void:
 	var hour = int(current_day_minutes / MINUTES_PER_HOUR)
 	var minute = int(current_day_minutes % MINUTES_PER_HOUR)
 
-	if (hour >= 20 || hour <= 5):
-		game.night(hour, minute)
-	else:
-		game.day(hour, minute)
+	game.cycle(day, hour, minute)
 
 	if past_minute != minute:
 		past_minute = minute
